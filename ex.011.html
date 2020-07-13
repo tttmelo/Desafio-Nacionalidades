@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nacionalidades</title>
+    <style>
+        
+        h1 
+        {
+            font: normal 20pt OpenSans;
+            color: rgb(93, 93, 253);
+        }
+
+        input 
+        {
+            background-color: rgb(197, 204, 253);
+        }
+
+        body 
+        {
+            background-color:rgb(241, 238, 238);
+        }
+    </style>
+</head>
+<body>
+    <h1> Descubra sua nacionalidade!</h1>
+    Qual seu nome? <input type="text" name="txtname" id="txtname">
+    <p> De qual país você é? <input type="text" name="txtpaís" id="txtpaís"></p>
+    <p><input type="button" value="verificar" onclick="calcular()"> </p>
+
+    <div id = "res">
+
+    </div>
+
+    <script>
+        function calcular()
+        {
+            var nomex = window.document.querySelector('input#txtname');
+            var local = window.document.querySelector('input#txtpaís');
+            var res = window.document.querySelector('div#res');
+            var nome = (nomex.value);
+            var origem = (local.value);
+
+            if (origem == 'Brasil')
+            {
+            res.innerHTML = `${nome} você é considerado(a) <strong>brasileiro(a)</strong>!`;
+            }
+
+            else 
+            {
+            res.innerHTML = `${nome} se você não nasceu no Brasil, você é considerado(a) <strong>estrangeiro(a)</strong>!`; 
+            }
+        }
+    </script>
+
+</body>
+</html>
